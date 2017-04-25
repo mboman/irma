@@ -85,3 +85,4 @@
     state: restarted
   become: yes
   with_items: "{{ supervisor_programs_brain }}"
+  when: ansible_virtualization_type != 'docker'

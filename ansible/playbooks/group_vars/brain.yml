@@ -172,5 +172,14 @@ supervisor_programs_brain:
     autostart: true
     stopwaitsecs: 600
     killasgroup: true
+  - name: rabbitmq_app
+    command: "/usr/sbin/rabbitmq-server"
+    numprocs: 1
+    autostart: true
+    autorestart: true
+  - name: sshd_app
+    command: /usr/sbin/sshd -D -e
+    autorestart: true
+    startretries: 3
 
 # vim: sw=2
