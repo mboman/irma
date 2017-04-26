@@ -124,6 +124,7 @@
     state: restarted
   become: yes
   with_items: "{{ supervisor_programs_frontend }}"
+  when: ansible_virtualization_type != 'docker'
 
 - name: Restart Init.d services
   service:
