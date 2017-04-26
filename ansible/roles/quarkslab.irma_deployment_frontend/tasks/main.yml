@@ -94,7 +94,7 @@
   when: "{{ bower_dir_stat.stat.exists and irma_deployment_code_version != 'local'}}"
 
 - name: Install Bower dependencies
-  command: node_modules/.bin/bower install --config.interactive=false
+  command: node_modules/.bin/bower install --config.interactive=false --allow-root
   args:
     chdir: "{{ frontend_deployment_dir }}/web"
 
