@@ -161,7 +161,15 @@ supervisor_programs_frontend:
     autostart: true
     stopwaitsecs: 600
     killasgroup: true
-
+  - name: nginx
+    command: /usr/sbin/nginx -g "daemon off;"
+    priority: 900
+    stdout_logfile: /dev/stdout
+    stdout_logfile_maxbytes: 0
+    stderr_logfile: /dev/stderr
+    stderr_logfile_maxbytes: 0
+    username: www-data
+    autorestart: true
 
 ## Nginx role
 nginx_configs:
