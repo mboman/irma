@@ -1,0 +1,9 @@
+---
+- name: Brain runtime deployment
+  hosts: brain
+  remote_user: "{{ brain_user }}"
+  roles:
+    - { role: mboman.irma_runtime_init, tags: runtime_brain }
+
+# vim: sw=2
+#
