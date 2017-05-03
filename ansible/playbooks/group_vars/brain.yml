@@ -181,11 +181,6 @@ supervisor_programs_brain:
     command: /usr/sbin/sshd -D -e
     autorestart: true
     startretries: 3
-  - name: brain_init
-    command: sleep 60 && /usr/local/bin/ansible-playbook -i /etc/ansible/hosts playbooks/runtime.yml
-    directory: /tmp/irma/ansible
-    autorestart: unexpected
-    startretries: 60
 
 
 
